@@ -1,12 +1,6 @@
 package com.theindianappguy.rest_app
 
-import androidx.annotation.NonNull;
-import io.flutter.embedding.engine.FlutterEngine
-import io.flutter.plugins.GeneratedPluginRegistrant
-import io.flutter.app.FlutterFragmentActivity
+import io.flutter.embedding.android.FlutterActivity
 
-class MainActivity: FlutterFragmentActivity() {
-    fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
-        GeneratedPluginRegistrant.registerWith(flutterEngine);
-    }
+class MainActivity: FlutterActivity() {
 }

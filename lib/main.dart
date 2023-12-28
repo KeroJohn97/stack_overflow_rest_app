@@ -7,23 +7,28 @@ import 'package:rest_app/screens/authenticate/signup.dart';
 import 'package:rest_app/screens/wrapper.dart';
 import 'package:rest_app/services/auth_services.dart';
 
-void main(){
+void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<User>.value(
+    return StreamProvider<User?>.value(
+      initialData: null,
       value: AuthService().user,
       child: MaterialApp(
         home: Wrapper(),
         theme: ThemeData.dark(),
         debugShowCheckedModeBanner: false,
         routes: <String, WidgetBuilder>{
-          '/signin' : (BuildContext context) => new SignIn(),
-          '/signup' : (BuildContext context) => new SignUp(),
-          '/home' : (BuildContext context) => new Home(),
+          '/signin': (BuildContext context) => new SignIn(
+                toogleView: () {},
+              ),
+          '/signup': (BuildContext context) => new SignUp(
+                toogleView: () {},
+              ),
+          '/home': (BuildContext context) => new Home(),
         },
       ),
     );
